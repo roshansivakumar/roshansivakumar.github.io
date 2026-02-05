@@ -27,7 +27,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Back Button */}
         <Link to="/projects">
           <Button variant="outline" className="mb-8">
@@ -113,59 +113,51 @@ const ProjectDetail = () => {
           </div>
         </Card>
 
-        {/* Project Details */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            <Card className="p-8 card-gradient border-border">
-              <div className="prose prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground prose-code:text-primary prose-a:text-primary">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {project.content}
-                </ReactMarkdown>
-              </div>
-            </Card>
-          </div>
+        {/* Team, Technologies & Contact */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <Card className="p-6 card-gradient border-border">
+            <h3 className="font-semibold mb-4">Team</h3>
+            <ul className="space-y-2">
+              {project.team.map((member, index) => (
+                <li key={index} className="text-sm text-muted-foreground">
+                  {member}
+                </li>
+              ))}
+            </ul>
+          </Card>
 
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Team */}
-            <Card className="p-6 card-gradient border-border">
-              <h3 className="font-semibold mb-4">Team</h3>
-              <ul className="space-y-2">
-                {project.team.map((member, index) => (
-                  <li key={index} className="text-sm text-muted-foreground">
-                    {member}
-                  </li>
-                ))}
-              </ul>
-            </Card>
+          <Card className="p-6 card-gradient border-border">
+            <h3 className="font-semibold mb-4">Technologies</h3>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech, index) => (
+                <Badge key={index} variant="secondary" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </Card>
 
-            {/* Technologies */}
-            <Card className="p-6 card-gradient border-border">
-              <h3 className="font-semibold mb-4">Technologies</h3>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
-                  <Badge key={index} variant="secondary" className="text-xs">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </Card>
-
-            {/* Contact */}
-            <Card className="p-6 card-gradient border-border">
-              <h3 className="font-semibold mb-4">Interested in This Project?</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Get in touch to discuss collaboration opportunities or technical details.
-              </p>
-              <Link to="/contact">
-                <Button className="w-full">
-                  Contact Me
-                </Button>
-              </Link>
-            </Card>
-          </div>
+          <Card className="p-6 card-gradient border-border">
+            <h3 className="font-semibold mb-4">Interested in This Project?</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Get in touch to discuss collaboration opportunities or technical details.
+            </p>
+            <Link to="/contact">
+              <Button className="w-full">
+                Contact Me
+              </Button>
+            </Link>
+          </Card>
         </div>
+
+        {/* Project Content */}
+        <Card className="p-8 card-gradient border-border">
+          <div className="prose prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground prose-code:text-primary prose-a:text-primary">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {project.content}
+            </ReactMarkdown>
+          </div>
+        </Card>
       </div>
     </div>
   );

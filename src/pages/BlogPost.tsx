@@ -38,7 +38,7 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Back Button */}
         <Link to="/blog">
           <Button variant="outline" className="mb-8">
