@@ -19,7 +19,7 @@ const About = () => {
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Wearable Military Tech",
-      description: "Developing advanced wearable systems for military applications, focusing on durability, performance, and soldier safety.",
+      description: "Developing advanced wearable systems for military applications, focusing on durability, performance, and operational enhancement.",
       tags: ["Electronics", "Materials", "Testing"]
     },
     {
@@ -27,12 +27,6 @@ const About = () => {
       title: "De-escalation Tools",
       description: "Creating innovative solutions for threat de-escalation against both human and drone targets.",
       tags: ["Defense", "Innovation", "Security"]
-    },
-    {
-      icon: <Cpu className="w-6 h-6" />,
-      title: "Tactical AI Systems",
-      description: "Implementing AI-powered threat detection and analysis systems for military operations.",
-      tags: ["AI/ML", "Defense", "Real-time"]
     },
     {
       icon: <Zap className="w-6 h-6" />,
@@ -55,13 +49,7 @@ const About = () => {
       description: "Creating brain-computer interfaces for medical rehabilitation and assistive technologies.",
       tags: ["BCI", "Neuroscience", "Rehabilitation"]
     },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Biomedical Devices",
-      description: "Engineering life-saving medical devices with focus on patient safety and efficacy.",
-      tags: ["Medical Devices", "FDA", "Safety"]
-    },
-    {
+        {
       icon: <Target className="w-6 h-6" />,
       title: "Precision Medicine",
       description: "Developing personalized treatment systems using AI and biomarker analysis.",
@@ -106,11 +94,11 @@ const About = () => {
             <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-card border border-primary/20 flex items-center justify-center tech-shadow overflow-hidden">
               <img 
                 src={profilePhoto} 
-                alt="Dr. Alex Rodriguez - The Hardware Maestro" 
+                alt="Roshan Sivakumar - The Hardware Maestro" 
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <h2 className="text-2xl font-bold text-center mb-2">Dr. Alex Rodriguez</h2>
+            <h2 className="text-2xl font-bold text-center mb-2">Roshan Sivakumar</h2>
             <p className="text-center text-muted-foreground font-medium">The Hardware Maestro</p>
           </div>
           
