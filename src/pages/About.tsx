@@ -5,7 +5,7 @@ import { Toggle } from "@/components/ui/toggle";
 import { Link } from "react-router-dom";
 import { ArrowRight, Zap, Shield, Brain, Target, Activity, Cpu, Download, Award, FileText, Users, ExternalLink, Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 import { useState, useEffect } from "react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/profilepic.jpeg";
 
 const About = () => {
   const [isMilitaryMode, setIsMilitaryMode] = useState(true);
@@ -58,32 +58,6 @@ const About = () => {
   ];
 
   const experiences = isMilitaryMode ? militaryExperiences : biomedicalExperiences;
-
-  const recentProjects = [
-    {
-      title: "Neural Interface Prototype",
-      description: "Advanced brain-computer interface for medical diagnostics",
-      tags: ["AI", "Biomedical"]
-    },
-    {
-      title: "Tactical Wearable System",
-      description: "Military-grade wearable with advanced sensor integration",
-      tags: ["Military", "IoT"]
-    }
-  ];
-
-  const recentBlogs = [
-    {
-      title: "The Future of AI in Military Applications",
-      category: "Technical Blogs",
-      date: "2024-01-15"
-    },
-    {
-      title: "Dad's Wisdom: Problem-Solving Like an Engineer",
-      category: "Dad's Wisdoms",
-      date: "2024-01-10"
-    }
-  ];
 
   return (
     <div className="min-h-screen">
@@ -590,60 +564,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Recent Work Section */}
-      <section className="py-20 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Recent Projects */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8">
-                Recent <span className="text-gradient">Projects</span>
-              </h3>
-              <div className="space-y-6">
-                {recentProjects.map((project, index) => (
-                  <Card key={index} className="p-6 card-gradient border-border">
-                    <h4 className="font-semibold mb-2">{project.title}</h4>
-                    <p className="text-muted-foreground mb-3">{project.description}</p>
-                    <div className="flex gap-2">
-                      {project.tags.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </Card>
-                ))}
-                <Link to="/projects">
-                  <Button variant="outline" className="w-full border-primary/20">
-                    View All Projects <ArrowRight size={16} className="ml-2" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Recent Blogs */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8">
-                Recent <span className="text-gradient">Posts</span>
-              </h3>
-              <div className="space-y-6">
-                {recentBlogs.map((blog, index) => (
-                  <Card key={index} className="p-6 card-gradient border-border">
-                    <h4 className="font-semibold mb-2">{blog.title}</h4>
-                    <p className="text-sm text-muted-foreground mb-2">{blog.category}</p>
-                    <p className="text-xs text-muted-foreground">{blog.date}</p>
-                  </Card>
-                ))}
-                <Link to="/blog">
-                  <Button variant="outline" className="w-full border-primary/20">
-                    View All Posts <ArrowRight size={16} className="ml-2" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
